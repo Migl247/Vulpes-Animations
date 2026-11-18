@@ -1,0 +1,171 @@
+body {
+    text-align: center;
+    background: radial-gradient(circle, #e469b4, #b4f5c7);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(112, 46, 79, 0.87);
+  color: #ff9f73;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes moverDireita {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(40vw);
+  }
+}
+
+@keyframes caindo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.wall {
+    position: fixed;
+    top: 0;
+    left: center;
+    width: 100px;
+    height: 100px;
+    animation-name: caindo; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+   
+}
+
+.wall2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    animation-name: caindo; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+   
+}
+
+.wall3 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    animation-name: caindo; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+   
+}
+
+.wall4 {
+    position: fixed;
+    top: 0;
+    left: 25%;
+    width: 100px;
+    height: 100px;
+    animation-name: caindo; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+   
+}
+
+.wall5 {
+    position: fixed;
+    top: 0;
+    right: 20%;
+    width: 100px;
+    height: 100px;
+    animation-name: caindo; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+   
+}
+
+
+.ralph {
+  position: fixed;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  animation-name: moverDireita; /* Nome da animação */
+  animation-duration: 2s; /* Tempo de duração */
+  animation-iteration-count: infinite; /* Repete infinitamente */
+  animation-direction: alternate; /* Vai e volta */
+}
+
+.vanellope {
+  position: fixed;
+  bottom: 0;
+  left: 40%;
+  width: 200px;
+  height: 200px;
+  animation-name: moverDireita; /* Nome da animação */
+  animation-duration: 2s; /* Tempo de duração */
+  animation-iteration-count: infinite; /* Repete infinitamente */
+  animation-direction: alternate; /* Vai e volta */
+}
+
+.donut {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    animation-name: girar; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+}
+
+.bala {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    animation-name: girar; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+}
+
+.turbo {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    animation-name: pulsar; /* Nome da animação */
+    animation-duration: 2s; /* Tempo de duração */
+    animation-iteration-count: infinite; /* Repete infinitamente */
+}

@@ -1,0 +1,130 @@
+body {
+  background: linear-gradient(135deg, #dbacfa, #fa70be, #ff5eb7);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  padding: 30px 20px;
+}
+
+
+/* Container com 3 blocos lado a lado */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1280px;
+  width: 100%;
+  align-items: stretch;
+}
+
+
+/* Cartão principal */
+.card-rosa {
+  background-color: rgba(236, 194, 255, 0.92);
+  padding: 34px 24px;
+  border-radius: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 35px rgba(190, 24, 93, 0.15);
+  border: 2px solid #f472b6;
+}
+
+
+.tag {
+  align-self: center;
+  background-color: #fa70b0;
+  color: #be185d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+
+/* Título totalmente PARADO no topo */
+.titulo-fixo {
+  font-size: 1.5rem;
+  color: #be185d;
+  margin-bottom: 20px;
+}
+
+
+/* Bloco interno que delimita o espaço do texto */
+.bloco-texto {
+  background-color: #ee8bd0;
+  border: 1px dashed #f472b6;
+  border-radius: 16px;
+  padding: 28px 20px;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Bloco de texto informativo SUBINDO E DESCENDO dentro do card */
+.texto-informativo {
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: #831843;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+
+
+  animation-name: subirEDescer;
+  animation-duration: 2.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+.texto-informativo strong {
+  color: #be185d;
+}
+
+
+.texto-informativo code {
+  font-family: 'Consolas', monospace;
+  background-color: #fcb9df;
+  color: #9d174d;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.86rem;
+}
+
+
+/* Pausa apenas o bloco onde o mouse estiver em cima para ler */
+.bloco-texto:hover .texto-informativo {
+  animation-play-state: paused;
+  color: #500724;
+}
+
+
+@keyframes subirEDescer {
+  0% {
+    transform: translateY(-9px);
+  }
+  100% {
+    transform: translateY(9px);
+  }
+}
+
+
+/* Responsividade: empilha os 3 blocos em telas menores */
+@media (max-width: 980px) {
+  .container {
+    grid-template-columns: 1fr;
+    max-width: 580px;
+  }
+}

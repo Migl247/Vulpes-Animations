@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animações CSS - Propriedades, Keyframes e Transition</title>
+  <link rel="stylesheet" href="w.css">
+</head>
+
+
+<body>
+  <main class="container">
+    
+    <!-- BLOCO 1: PROPRIEDADES PRINCIPAIS (MARIA EDUARDA) -->
+    <div class="card-rosa">
+      <span class="tag">Tópico 01 • Maria Eduarda</span>
+      <h1 class="titulo-fixo">🍭 Propriedades Principais 🍭</h1>
+      
+      <div class="bloco-texto">
+        <div class="texto-informativo">
+          <p><strong>1. animation-name:</strong> Nome dado à animação para conectar o elemento à regra <code>@keyframes</code>.</p>
+          <p><strong>2. animation-duration:</strong> Define o tempo total do início ao fim, medido em segundos (<code>s</code>) ou milissegundos (<code>ms</code>).</p>
+          <p><strong>3. animation-timing-function:</strong> Define o ritmo da animação (ex.: <code>ease</code> para acelerar/desacelerar, <code>linear</code> para velocidade constante).</p>
+          <p><strong>4. animation-delay:</strong> Tempo de espera antes da animação começar após a página carregar ou o elemento aparecer.</p>
+          <p><strong>5. animation-iteration-count:</strong> Controla quantas vezes vai repetir (um número como <code>3</code> ou <code>infinite</code>).</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- BLOCO 2: REGRAS @KEYFRAMES (VICTOR JUAN) -->
+    <div class="card-rosa">
+      <span class="tag">Tópico 02 • Victor Juan</span>
+      <h1 class="titulo-fixo">🧁 Regras @keyframes 🧁</h1>
+      
+      <div class="bloco-texto">
+        <div class="texto-informativo">
+          <p><strong>@keyframes:</strong> Regra associada pelo <code>animation-name</code> que contém os seletores de quadro-chave e seus estilos.</p>
+          <p><strong>from:</strong> Equivalente ao valor <code>0%</code> (início da animação).</p>
+          <p><strong>to:</strong> Equivalente ao valor <code>100%</code> (fim da animação).</p>
+          <p><strong>&lt;percentage&gt;:</strong> A porcentagem da sequência em que o quadro-chave ocorre.</p>
+          <p><strong>Comportamento padrão:</strong> Se <code>0%</code>/<code>from</code> ou <code>100%</code>/<code>to</code> não forem especificados, o navegador usa os estilos originais do elemento. Propriedades não animáveis são ignoradas.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- BLOCO 3: TRANSITION VS ANIMATION (NOVO TÓPICO) -->
+    <div class="card-rosa">
+      <span class="tag">Tópico 03 • Miguel</span>
+      <h1 class="titulo-fixo">🍬 Transition vs Animation 🍬</h1>
+      
+      <div class="bloco-texto">
+        <div class="texto-informativo">
+          <p><strong>Critério de escolha:</strong> A escolha entre <code>CSS Transition</code> e <code>CSS Animation</code> depende diretamente da complexidade do movimento e de como ele é disparado.</p>
+          <p><strong>CSS Transition:</strong> Use para mudanças simples de estado (de <strong>A para B</strong>), geralmente acionadas por uma interação como o <code>:hover</code>.</p>
+          <p><strong>CSS Animation:</strong> Use para movimentos contínuos, complexos (com várias etapas) ou que precisam rodar sozinhos automaticamente.</p>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+</body>
+
+
+</html>

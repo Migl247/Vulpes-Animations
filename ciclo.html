@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Ciclo - Animações CSS</title>
+  <link rel="stylesheet" href="ciclo.css">
+</head>
+
+<body>
+  <main class="container">
+    <header class="titulo">
+      <h1>Controle de Ciclo</h1>
+    </header>
+
+    <!-- 1. ANIMATION-DIRECTION -->
+    <section class="conceito">
+      <h2>Animation-direction <span>(Direção)</span></h2>
+      <p class="descricao">Controla a ordem da animação.</p>
+      <div class="lista-valores">
+        <div class="item-exemplo">
+          <h3><span class="codigo">normal:</span> Do começo ao fim.</h3>
+          <div class="pista"><div class="bola anim-normal"></div></div>
+        </div>
+
+        <div class="item-exemplo">
+          <h3><span class="codigo">reverse:</span> Do fim ao começo.</h3>
+          <div class="pista"><div class="bola anim-reverse"></div></div>
+        </div>
+
+        <div class="item-exemplo">
+          <h3><span class="codigo">alternate:</span> Vai e volta a cada ciclo.</h3>
+          <div class="pista"><div class="bola anim-alternate"></div></div>
+        </div>
+
+        <div class="item-exemplo">
+          <h3><span class="codigo">alternate-reverse:</span> Começa do fim e vai voltando.</h3>
+          <div class="pista"><div class="bola anim-alternate-reverse"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ANIMATION-FILL-MODE (LOOP AUTOMÁTICO COM PAUSA) -->
+    <section class="conceito">
+      <div class="cabecalho-card">
+        <div>
+          <h2>Animation-fill-mode <span>(Antes e depois da corrida)</span></h2>
+          <p class="descricao-sem-borda">Repete automaticamente: espera 2s, corre 2s e congela 2s no final.</p>
+        </div>
+        <span id="status-ciclo" class="badge-status">⏳ Delay (2s)...</span>
+      </div>
+
+      <div class="lista-valores" id="lista-fill-mode">
+        <div class="item-exemplo">
+          <h3><span class="codigo">none:</span> Fica rosa na espera, corre e volta pro início.</h3>
+          <div class="pista pista-marcada"><div class="bola anim-none"></div></div>
+        </div>
+
+        <div class="item-exemplo">
+          <h3><span class="codigo">forwards:</span> Fica rosa na espera, corre e <strong>trava verde no fim</strong>.</h3>
+          <div class="pista pista-marcada"><div class="bola anim-forwards"></div></div>
+        </div>
+
+        <div class="item-exemplo">
+          <h3><span class="codigo">backwards:</span> Já <strong>começa roxa na largada</strong> na espera, corre e volta.</h3>
+          <div class="pista pista-marcada"><div class="bola anim-backwards"></div></div>
+        </div>
+
+        <div class="item-exemplo">
+          <h3><span class="codigo">both:</span> Já <strong>começa roxa na largada</strong> e <strong>trava verde no fim</strong>.</h3>
+          <div class="pista pista-marcada"><div class="bola anim-both"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ANIMATION-PLAY-STATE -->
+    <section class="conceito">
+      <h2>Animation-play-state <span>(Estado de reprodução)</span></h2>
+      <p class="descricao">Liga e desliga o jogo.</p>
+      <div class="lista-valores">
+        <div class="item-exemplo">
+          <h3><span class="codigo">running:</span> Rodando.</h3>
+          <div class="pista"><div class="bola anim-running"></div></div>
+        </div>
+
+        <div class="item-exemplo">
+          <h3><span class="codigo">paused:</span> Congelada.</h3>
+          <div class="pista"><div class="bola anim-paused"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const listaFill = document.getElementById('lista-fill-mode');
+    const statusBadge = document.getElementById('status-ciclo');
+
+    function iniciarCicloFillMode() {
+      // 1. Reseta as animações para começar do zero
+      const bolas = listaFill.querySelectorAll('.bola');
+      bolas.forEach(bola => {
+        const animacaoAtual = bola.className;
+        bola.className = 'bola';
+        void bola.offsetWidth; // Força o reinício no navegador
+        bola.className = animacaoAtual;
+      });
+
+      // 2. Atualiza a etiqueta visual de cada etapa (2s delay -> 2s correndo -> 2s congelado)
+      statusBadge.textContent = '⏳ Delay (Espera)...';
+      statusBadge.className = 'badge-status fase-delay';
+
+      setTimeout(() => {
+        statusBadge.textContent = '🏃 Correndo...';
+        statusBadge.className = 'badge-status fase-correndo';
+      }, 2000);
+
+      setTimeout(() => {
+        statusBadge.textContent = '🛑 Acabou (Congelado)';
+        statusBadge.className = 'badge-status fase-fim';
+      }, 4000);
+    }
+
+    // Roda a primeira vez imediatamente e repete a cada 6.5 segundos
+    iniciarCicloFillMode();
+    setInterval(iniciarCicloFillMode, 6500);
+  </script>
+</body>
+
+</html>

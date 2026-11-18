@@ -1,0 +1,41 @@
+h1 {text-align: center;
+    color: rgb(201, 30, 178);
+    background: radial-gradient(circle, rgb(105, 153, 226), rgb(125, 29, 145));
+    font-family: 'Alice'
+     }
+
+     .badge {
+      background-color: rgb(207, 105, 58);
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+     }
+
+     nav {
+    background-color: rgb(110, 58, 207);
+    padding: 15px;
+    text-align: center;
+     }
+
+     nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 25px; 
+        font-size: 18px;
+        font-weight: bold;
+     }
+
+     nav a:hover {
+        color: rgb(240, 71, 108);
+     }
+
+     body {
+        text-align: center;
+        background: linear-gradient( rgb(47, 12, 61) ,rgb(255, 165, 220), rgb(47, 12, 61));
+        font-family: 'Alice';
+     }
+
+     #detona {
+        height: 45%;
+        width: 50%;
+     }
